@@ -2,15 +2,17 @@ package com.example.Project.Model;
 
 public class loginModel {
 
-	private String username;
+	private String userid;
 	private String password;
+	
+	
 
-	public String getUsername() {
-		return username;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
 	public String getPassword() {
@@ -23,7 +25,8 @@ public class loginModel {
 
 	@Override
 	public String toString() {
-		return "loginModel [username=" + username + ", password=" + password + "]";
+		return "loginModel [userid=" + userid + ", password=" + password + "]";
 	}
+	
 
 }

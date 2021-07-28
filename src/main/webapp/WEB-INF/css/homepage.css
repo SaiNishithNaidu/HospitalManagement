@@ -5,14 +5,14 @@
 }
 .logoplace{
 	margin-left: 30px;
-	margin-top: 10px;
-	height: 50px;
-	width: 50px;
+	margin-top: 25px;
 	position: absolute;
-	border-radius: 100px;
-	background-color: #0048D9;
 	float: left;
-}
+	height :40px;
+	width:90px;
+	background:url("https://firebasestorage.googleapis.com/v0/b/indigo-listener-256706.appspot.com/o/hmsmngmnt_bg.png?alt=media&token=76bdbc8f-f3cb-437d-a2d2-a7d12e499ee2");
+	background-size: 90px 40px;
+}	
 .inputs{
 	width: 160px;
 	height: 30px;
@@ -26,11 +26,11 @@
 
 }
 .textplace{
-	width: 30%;
-	margin-top: 10px;
-	margin-right: 30px;
+	width: 400px;
+	margin-top: 30px;
+	margin-right: 10px;
 	height: 50px;
-	float: right;
+	float:right;
 }
 .textinside{
 	float: left;
@@ -40,10 +40,7 @@
 	padding: 10px 0;
 }
 .logout{
-	margin-top: 10px;
 	padding: 5px 8px;
-	float: right;
-	width: 20%;
 	text-align: center;
 	font-size: 20px;
 	color: white;
@@ -58,7 +55,7 @@
 .second{
 	width: 100%;
 	height: 50px;
-	background-color: #2196F3;
+	background-color: #466393;
 }
 
 
@@ -75,66 +72,72 @@
 
 
 
-.third{
-	height: 700px;
-
-	background-image: url("https://firebasestorage.googleapis.com/v0/b/soundinbackground.appspot.com/o/View1.png?alt=media&token=25102f27-3e96-41b0-a100-d7de2bba5c45	");
-
-
+.thirdDoctor{
+	height: 100%;
+	background:linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("https://firebasestorage.googleapis.com/v0/b/soundinbackground.appspot.com/o/Doctors.jpg?alt=media&token=349807a9-0258-48bb-9073-08891ac8c9d4");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 }
+
+.thirdHospitalAdmin{
+	height: 100%;
+	background:linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("https://firebasestorage.googleapis.com/v0/b/soundinbackground.appspot.com/o/HospitalAdmin.jpg?alt=media&token=c4bac8d9-cf66-4863-a724-cb1c72546413");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.thirdPatient{
+	height: 100%;
+	background:linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("https://firebasestorage.googleapis.com/v0/b/soundinbackground.appspot.com/o/patient.jpg?alt=media&token=9f5dfa91-87d6-4c3b-b938-8ee601d2e501");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+
+.thirdAdmin{
+	height: 100%;
+	background:linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url("https://firebasestorage.googleapis.com/v0/b/soundinbackground.appspot.com/o/SysAdmin.jpg?alt=media&token=b9e97d0b-cc24-45ed-a385-8f40b1506ca0");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
 .fourth{
+	padding: 20px 0;
+  	text-align: center;
 	width: 18%;
 	margin: 20px;
 	margin-left: 100px;
-	height: 70px;
-	text-align: center;
-	padding: 10px;
 	color: white;
 	border-radius: 5px;
-	background-color: #0048D9;
+	background-color: #498af6;
 
 }
 .fifth{
-	margin-left:150px;
+	margin-left:10%;
+	margin-right: 10%;
 }
 
 
 
+a{
+	text-decoration: none;
+}
+
+
+table.table-bordered >thead > tr >th{
+	
+    border:2px solid black;
+}
+table.table-bordered {
+	font-size:22px;
+    border:2px solid black;
+}
 
 
 
-ul {
-  text-align:center;
-  position:relative;
-  display:inline-block;
-}
-li {
-  list-style:none;
-  display:inline-block;
-  margin-right:35px;
-}
-a {
-  text-decoration:none;
-  font-size: 20px;
-  cursor:pointer;
-}
-.bottom__line {
-  position:absolute;
-  top:25px;
-  left:37px;
-  width:60px;
-  height:3px;
-  background-color:#0C31F1;
-}
-.bottom__active {
-  transform: translate3d(0%, 0, 0);
-  transition:all linear 240ms;
-}
-.bottom__active1 {
-  transform: translate3d(150%, 0, 0);
-  transition:all linear 240ms;
-}
-.bottom__active2 {
-  transform: translate3d(325%, 0, 0);
-  transition:all linear 240ms;
+.box {
+  float: left;
+  width: 45%;
+  padding: 10px;
+  margin:20px;
 }

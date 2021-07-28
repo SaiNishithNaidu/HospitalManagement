@@ -1,6 +1,8 @@
 package com.example.Project.Model;
 
-public class registerHospitalAdminModel {
+public class RegisterHospitalAdminModel {
+	private String Hospital_Id;
+	private String id;
 	private String Hospital_Name;
 	private String Address_Lane1;
 	private String Address_Lane2;
@@ -11,6 +13,26 @@ public class registerHospitalAdminModel {
 	private String Hospital_Contact_Number;
 	private String Hospital_Fax_Number;
 	private String Hospital_Website;
+	private String Security_Question;
+	private String Answer;
+	
+	
+	
+	
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getHospital_Id() {
+		return Hospital_Id;
+	}
+	public void setHospital_Id(String hospital_Id) {
+		Hospital_Id = hospital_Id;
+	}
 	/**
 	 * @return the hospital_Name
 	 */
@@ -125,14 +147,28 @@ public class registerHospitalAdminModel {
 	public void setHospital_Website(String hospital_Website) {
 		Hospital_Website = hospital_Website;
 	}
+	public String getSecurity_Question() {
+		return Security_Question;
+	}
+	public void setSecurity_Question(String security_Question) {
+		Security_Question = security_Question;
+	}
+	public String getAnswer() {
+		return Answer;
+	}
+	public void setAnswer(String answer) {
+		Answer = answer;
+	}
 	@Override
 	public String toString() {
-		return "registerHospitalAdminModel [Hospital_Name=" + Hospital_Name + ", Address_Lane1=" + Address_Lane1
-				+ ", Address_Lane2=" + Address_Lane2 + ", Address_Lane3=" + Address_Lane3 + ", City=" + City
-				+ ", State=" + State + ", Zip=" + Zip + ", Hospital_Contact_Number=" + Hospital_Contact_Number
-				+ ", Hospital_Fax_Number=" + Hospital_Fax_Number + ", Hospital_Website=" + Hospital_Website + "]";
+		return "RegisterHospitalAdminModel [Hospital_Id=" + Hospital_Id + ", id=" + id + ", Hospital_Name="
+				+ Hospital_Name + ", Address_Lane1=" + Address_Lane1 + ", Address_Lane2=" + Address_Lane2
+				+ ", Address_Lane3=" + Address_Lane3 + ", City=" + City + ", State=" + State + ", Zip=" + Zip
+				+ ", Hospital_Contact_Number=" + Hospital_Contact_Number + ", Hospital_Fax_Number="
+				+ Hospital_Fax_Number + ", Hospital_Website=" + Hospital_Website + ", Security_Question="
+				+ Security_Question + ", Answer=" + Answer + "]";
 	}
-
+	
 	
 	
 

@@ -1,5 +1,9 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/Feedback_p.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/Patient/footer.jspf=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/main.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/jsp/register_hospital_admin.jsp=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

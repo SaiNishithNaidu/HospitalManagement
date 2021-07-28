@@ -6,7 +6,8 @@ public class FacilityAppointmentModel {
 	private String Hospital_Name;
 	private String Date_of_Appointment;
 	private String Time_of_Appointment;
-	private String Remarks_of_Doctor_Appointment;
+	private String Remarks_of_Facility_Appointment;
+
 	/**
 	 * @return the facility
 	 */
@@ -55,23 +56,19 @@ public class FacilityAppointmentModel {
 	public void setTime_of_Appointment(String time_of_Appointment) {
 		Time_of_Appointment = time_of_Appointment;
 	}
-	/**
-	 * @return the remarks_of_Doctor_Appointment
-	 */
-	public String getRemarks_of_Doctor_Appointment() {
-		return Remarks_of_Doctor_Appointment;
+	public String getRemarks_of_Facility_Appointment() {
+		return Remarks_of_Facility_Appointment;
 	}
-	/**
-	 * @param remarks_of_Doctor_Appointment the remarks_of_Doctor_Appointment to set
-	 */
-	public void setRemarks_of_Doctor_Appointment(String remarks_of_Doctor_Appointment) {
-		Remarks_of_Doctor_Appointment = remarks_of_Doctor_Appointment;
+	public void setRemarks_of_Facility_Appointment(String remarks_of_Facility_Appointment) {
+		Remarks_of_Facility_Appointment = remarks_of_Facility_Appointment;
 	}
 	@Override
 	public String toString() {
 		return "FacilityAppointmentModel [Facility=" + Facility + ", Hospital_Name=" + Hospital_Name
 				+ ", Date_of_Appointment=" + Date_of_Appointment + ", Time_of_Appointment=" + Time_of_Appointment
-				+ ", Remarks_of_Doctor_Appointment=" + Remarks_of_Doctor_Appointment + "]";
+				+ ", Remarks_of_Facility_Appointment=" + Remarks_of_Facility_Appointment + "]";
 	}
 	
+
+
 }

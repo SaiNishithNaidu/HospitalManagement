@@ -2,13 +2,25 @@ package com.example.Project.Model;
 
 import java.sql.Date;
 
-public class registerPatientModel {
+public class RegisterPatientModel {
+	private String id;
 	private String First_Name;
 	private String Last_Name;
 	private String DOB;
 	private String Gender;
 	private String Contact_Number;
 	private String Email;
+	private String Security_Question;
+	private String Answer;
+	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getFirst_Name() {
 		return First_Name;
@@ -57,11 +69,29 @@ public class registerPatientModel {
 	public void setEmail(String email) {
 		Email = email;
 	}
+	public String getSecurity_Question() {
+		return Security_Question;
+	}
+
+	public void setSecurity_Question(String security_Question) {
+		Security_Question = security_Question;
+	}
+
+	public String getAnswer() {
+		return Answer;
+	}
+
+	public void setAnswer(String answer) {
+		Answer = answer;
+	}
 
 	@Override
 	public String toString() {
-		return "registerPatientModel [First_Name=" + First_Name + ", Last_Name=" + Last_Name + ", DOB=" + DOB
-				+ ", Gender=" + Gender + ", Contact_Number=" + Contact_Number + ", Email=" + Email + "]";
+		return "RegisterPatientModel [id=" + id + ", First_Name=" + First_Name + ", Last_Name=" + Last_Name + ", DOB="
+				+ DOB + ", Gender=" + Gender + ", Contact_Number=" + Contact_Number + ", Email=" + Email
+				+ ", Security_Question=" + Security_Question + ", Answer=" + Answer + "]";
 	}
 
+	
+	
 }

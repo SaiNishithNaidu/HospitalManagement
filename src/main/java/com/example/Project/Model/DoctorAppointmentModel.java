@@ -3,6 +3,7 @@ package com.example.Project.Model;
 public class DoctorAppointmentModel {
 
 	private String Hospital_Name;
+	private String Doctor_Name;
 	private String Date_of_Appointment;
 	private String Time_of_Appointment;
 	private String Remarks_of_Doctor_Appointment;
@@ -21,6 +22,12 @@ public class DoctorAppointmentModel {
 	/**
 	 * @return the date_of_Appointment
 	 */
+	public String getDoctor_Name() {
+		return Doctor_Name;
+	}
+	public void setDoctor_Name(String doctor_Name) {
+		Doctor_Name = doctor_Name;
+	}
 	public String getDate_of_Appointment() {
 		return Date_of_Appointment;
 	}
@@ -56,10 +63,11 @@ public class DoctorAppointmentModel {
 	}
 	@Override
 	public String toString() {
-		return "DoctorAppointmentModel [Hospital_Name=" + Hospital_Name + ", Date_of_Appointment=" + Date_of_Appointment
-				+ ", Time_of_Appointment=" + Time_of_Appointment + ", Remarks_of_Doctor_Appointment="
-				+ Remarks_of_Doctor_Appointment + "]";
+		return "DoctorAppointmentModel [Hospital_Name=" + Hospital_Name + ", Doctor_Name=" + Doctor_Name
+				+ ", Date_of_Appointment=" + Date_of_Appointment + ", Time_of_Appointment=" + Time_of_Appointment
+				+ ", Remarks_of_Doctor_Appointment=" + Remarks_of_Doctor_Appointment + "]";
 	}
+
 
 
 }

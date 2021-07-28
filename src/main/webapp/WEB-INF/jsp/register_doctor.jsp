@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	<style><%@include file="/WEB-INF/css/doctorRegister.css"%></style>
+    pageEncoding="ISO-8859-1"%>
+    <style><%@include file="/WEB-INF/css/doctorRegister.css"%></style>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,87 +8,185 @@
 <title>Doctor RegistrationPage</title>
 </head>
 
+ 
+
 <script>
 function myFunction() {
-	alert("sucess");
+    alert("sucess");
 }
 </script>
-<body>
-<div class="first">
-		<div class="logoplace">
-			<a href="" style="text-decoration: none;">
-			<div class="logoinsidename">
-				H
-			</div>
-			</a>
-
-		</div>		
-			<div class="AboutUs"><a href="" style="text-decoration: none; color: black;">About Us</a> </div>
-	</div>
-	
-	<div class="second">
-		<div class="child">			
-			<form action="/afterRegister1" method="GET" modelAttribute="registerDoctorModel" onsubmit="required()" name="form1">
-		
-		<h3>Register</h3>
-		<label>First Name*</label><br>
-		<input class="inputs" type="text" name="First_Name" placeholder="First Name" required="required" minlength="0" maxlength="20" /><br><br>
 
 
-
-		<label>Last Name</label><br>
-		<input class="inputs" type="text" name="Last_Name"  placeholder="lastname" minlength="0" maxlength="20"/><br></br>
+<style>
 
 
-		<label>Date of Birth*</label><br>
-		<input class="inputs" type="date" name="DOB" required="required" /><br></br>
+span{
+	color: red;
+}
 
 
-		<div style="float: left;">
-		<label>Gender*</label><br>
-		<input type="radio" name="Gender" value="Male" id="Gender" required="required" />Male
-		<input type="radio" name="Gender" value="Female" id="Gender" required="required" />Female
-		<input type="radio" name="Gender" value="Other" id="Gender" required="required" />Others	
-		</div><br><br><br>
-		
-		<label>Contact*</label><br>
-		<input class="inputs" type="text" name="Contact_Number"  placeholder="Contact" required="required" pattern="[6-9]{1}[0-9]{9}"/><br></br>
+	td{
+  	padding-left: 30px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  	}
 
+</style>
+<body class="main-bg">
+        <div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Sign Up </h2>    
+            <form action="/afterRegisterDoctor" method="GET" modelAttribute="registerDoctorModel" onsubmit="required()" name="form1">
+        <center><h3 style="color: red;">${error}</h3></center><br>
+        <center><table>
+        <tr>
+        <td>
+        
+        <label>First Name <span>*</span></label><br>
+        <input type="text" name="First_Name" placeholder="First Name" required="required" minlength="0" maxlength="20" /><br><br>
+        </td>
 
-		<label>Email*</label><br>
-		<input class="inputs" type="email" name="Email"  placeholder="Email" required="required" /><br></br>
+ 
 
-		
-		<h2>Please Fill Previous Work Experience</h2>
-				
-		<label>Qualification</label><br>
-		<input class="inputs" type="text" name="Qualification"  placeholder="Qualification" required="required" /><br></br>
-		
-		<label>Speciality</label><br>
-		<input class="inputs" type="text" name="Speciality"  placeholder="Speciality" required="required" /><br></br>
-		
-		<label>Experience</label><br>
-		<input class="inputs" type="text" name="Experience"  placeholder="Experience" required="required" /><br></br>
-		
-		<label>Hospital Name</label><br>
-		<input class="inputs" type="text" name="Hospital_Name"  placeholder="Hospital Name" required="required" /><br></br>
-		
-		<label>Day of Availability</label><br>
-		<input class="inputs" type="date" name="Day_of_Availability"  placeholder="Day of Availability" required="required" /><br></br>
-		
-		<label>Time of Availability</label><br>
-		<input class="inputs" type="time" name="Time_of_Availability"  placeholder="Time of Availability" required="required" /><br></br>
-		
-		<input type="submit" name="Register" style="background-color: #0048D9; width: 100%; color: white; border-radius: 5px; padding-top: 5px; padding-bottom: 5px; font-weight: bold;" value="Register"/>
-		</form>
+        <td>
+        <label>Last Name</label><br>
+        <input type="text" name="Last_Name"  placeholder="lastname" minlength="0" maxlength="20"/><br></br>
+        </td>
+        </tr>
 
-		</div>
-		
-		
-	</div>
+ 
 
-	<script src="webjars/jquery/3.5.0/jquery.min.js"></script>
-	<script src="webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+        <tr>
+        <td>
+        <label>Date of Birth <span>*</span></label><br>
+        <input  type="date" name="DOB" required="required" /><br></br>
+        </td>
+        
+        
+        <td>
+        <div style="float: left;">
+        <label>Gender <span>*</span></label><br>
+        <input type="radio" name="Gender" value="Male" id="Gender" required="required" />Male
+        <input type="radio" name="Gender" value="Female" id="Gender" required="required" />Female
+        <input type="radio" name="Gender" value="Other" id="Gender" required="required" />Others    
+        </div>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        <label>Contact <span>*</span></label><br>
+        <input  type="number" name="Contact_Number"  placeholder="Contact" required="required" pattern="[6-9]{1}[0-9]{9}"/><br>
+        </td>
+
+ 
+
+        <td>
+        <label>Email <span>*</span></label><br>
+        <input  type="email" name="Email"  placeholder="Email" required="required" />
+        </td>
+        </tr>
+        
+     
+        <tr>
+        <td>        
+        <label>Qualification</label><br>
+        <input  type="text" name="Qualification"  placeholder="Qualification" required="required" /><br></br>
+        </td>
+        
+        <td>
+        <label>Speciality</label><br>
+        <input  type="text" name="Speciality"  placeholder="Speciality" required="required" /><br></br>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        <label>Experience</label><br>
+        <input  type="number" name="Experience"  placeholder="Experience" required="required" /><br></br>
+        </td>
+        
+        <td>
+        <label>Hospital Name</label><br>
+        <input type="text" name="Hospital_Name"  placeholder="Hospital Name" required="required" /><br></br>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        <label>Days Availiable</label><br><br>
+        <input type="checkbox" name="DAY" value="Sunday">
+          <label for="Sunday"> Sunday </label><br>
+        <input type="checkbox" name="DAY" value="Monday">
+          <label for="Monday"> Monday </label><br>
+          <input type="checkbox" name="DAY" value="Tuesday">
+          <label for="Tuesday"> Tuesday </label><br>
+          <input type="checkbox" name="DAY" value="Wednesday">
+          <label for="Wednesday"> Wednesday </label><br>
+          <input type="checkbox" name="DAY" value="Thursday">
+          <label for="Thursday"> Thursday </label><br>
+          <input type="checkbox" name="DAY" value="Friday">
+          <label for="Friday"> Friday </label><br>
+          <input type="checkbox" name="DAY" value="Saturday">
+          <label for="Saturday"> Saturday </label><br><br>
+        </td>
+        </tr>
+        
+   
+        
+        <tr>
+        <td>
+        <label>Available From</label><br>
+        <input  type="time" name="Available_From"   required="required" /><br></br>
+        </td>
+        
+        <td>
+        <label>Available To</label><br>
+        <input  type="time" name="Available_To"   required="required" /><br></br>
+        </td>
+        </tr>
+        
+        <tr>
+        <td>
+        
+         <label>Security Question <span>*</span></label><br>
+         <div class="select">
+        <select name="Security_Question" id="Security_Question" style="width: 100%; height: 35px;">
+        <option value="In what city were you born?">In what city were you born?</option>
+        <option value="What is the name of your favorite pet?">What is the name of your favorite pet?</option>
+        <option value="What is the name of your first school?">What is the name of your first school?</option>
+          </select>
+        </div>
+        
+       
+          </td>
+          </tr>
+          
+          <tr>
+          <td>
+          <label>Answer <span>*</span></label><br>
+        <input  type="text" name="Answer" required="required" placeholder="Answer"/><br><br>
+        </td>
+        </tr>
+        
+        <tr>
+        <td colspan="2">
+        <center><input type="submit" name="Register"  value="Register"/></center>
+        </td>
+        </tr>
+        
+        </table></center>
+        </form>
+
+ 
+
+        </div>
+        
+    </div>
+
+ 
+
+    
 </body>
 </html>
-

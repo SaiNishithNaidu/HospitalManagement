@@ -1,20 +1,31 @@
 package com.example.Project.Model;
 
-public class registerDoctorModel {
+public class RegisterDoctorModel {
+	private String id;
 	private String First_Name;
 	private String Last_Name;
 	private String DOB;
 	private String Gender;
 	private String Contact_Number;
 	private String Email;
-	private String UserID;
-	private String Password;
 	private String Qualification;
 	private String Speciality;
 	private int Experience;
 	private String Hospital_Name;
-	private String Day_of_Availability;
-	private String Time_of_Availability;
+	private String DAY;
+	private String Available_From;
+	private String Available_To;
+	private String Security_Question;
+	private String Answer;
+
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public String getFirst_Name() {
 		return First_Name;
@@ -64,22 +75,6 @@ public class registerDoctorModel {
 		Email = email;
 	}
 
-	public String getUserID() {
-		return UserID;
-	}
-
-	public void setUserID(String userID) {
-		UserID = userID;
-	}
-
-	public String getPassword() {
-		return Password;
-	}
-
-	public void setPassword(String password) {
-		Password = password;
-	}
-
 	public String getQualification() {
 		return Qualification;
 	}
@@ -112,29 +107,62 @@ public class registerDoctorModel {
 		Hospital_Name = hospital_Name;
 	}
 
-	public String getDay_of_Availability() {
-		return Day_of_Availability;
+	public String getDAY() {
+		return DAY;
 	}
 
-	public void setDay_of_Availability(String day_of_Availability) {
-		Day_of_Availability = day_of_Availability;
+	public void setDAY(String dAY) {
+		DAY = dAY;
 	}
 
-	public String getTime_of_Availability() {
-		return Time_of_Availability;
+	public String getAvailable_From() {
+		return Available_From;
 	}
 
-	public void setTime_of_Availability(String time_of_Availability) {
-		Time_of_Availability = time_of_Availability;
+	public void setAvailable_From(String available_From) {
+		Available_From = available_From;
+	}
+
+	public String getAvailable_To() {
+		return Available_To;
+	}
+
+	public void setAvailable_To(String available_To) {
+		Available_To = available_To;
+	}
+	public String getSecurity_Question() {
+		return Security_Question;
+	}
+
+	public void setSecurity_Question(String security_Question) {
+		Security_Question = security_Question;
+	}
+
+	public String getAnswer() {
+		return Answer;
+	}
+
+	public void setAnswer(String answer) {
+		Answer = answer;
 	}
 
 	@Override
 	public String toString() {
-		return "registerDoctorModel [First_Name=" + First_Name + ", Last_Name=" + Last_Name + ", DOB=" + DOB
-				+ ", Gender=" + Gender + ", Contact_Number=" + Contact_Number + ", Email=" + Email + ", UserID="
-				+ UserID + ", Password=" + Password + ", Qualification=" + Qualification + ", Speciality=" + Speciality
-				+ ", Experience=" + Experience + ", Hospital_name=" + Hospital_Name + ", Day_of_Availability="
-				+ Day_of_Availability + ", Time_of_Availability=" + Time_of_Availability + "]";
+		return "RegisterDoctorModel [id=" + id + ", First_Name=" + First_Name + ", Last_Name=" + Last_Name + ", DOB="
+				+ DOB + ", Gender=" + Gender + ", Contact_Number=" + Contact_Number + ", Email=" + Email
+				+ ", Qualification=" + Qualification + ", Speciality=" + Speciality + ", Experience=" + Experience
+				+ ", Hospital_Name=" + Hospital_Name + ", DAY=" + DAY + ", Available_From=" + Available_From
+				+ ", Available_To=" + Available_To + ", Security_Question=" + Security_Question + ", Answer=" + Answer
+				+ "]";
 	}
+
+	
+	
+	
+
+
+	
+
+
 
 }

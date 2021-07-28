@@ -1,7 +1,6 @@
 package com.example.Project.Model;
 
 public class AddFacilitiesModel {
-	
 	private String Facility;
 	private String Description_of_Facilities;
 	private String Remarks_of_Facilities;

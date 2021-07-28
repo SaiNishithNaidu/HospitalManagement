@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
-import com.example.Project.Model.registerDoctorModel;
+import com.example.Project.Model.RegisterDoctorModel;
 
 @Service
 public class DoctorRegisterService {
@@ -16,20 +17,47 @@ public class DoctorRegisterService {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	public Boolean addDoctorToDatabase(registerDoctorModel doctorModel) {
-		String sql = "insert into register_doctor (First_Name,Last_Name,DOB,Gender,Contact_Number,Email,Qualification,Speciality,Experience,Hospital_Name,Day_of_Availability,Time_of_Availability)values(" + "\""
-				+ doctorModel.getFirst_Name() + "\"" + "," + "\"" + doctorModel.getLast_Name() + "\"" + "," + "\""
-				+ doctorModel.getDOB() + "\"" + "," + "\"" + doctorModel.getGender() + "\"" + "," + "\""
-				+ Long.parseLong(doctorModel.getContact_Number()) + "\"" + "," + "\"" + doctorModel.getEmail() + "\""
-				+ "," + "\"" + doctorModel.getQualification() + "\"" + "," + "\"" + doctorModel.getSpeciality() + "\""
-				+ "," + "\"" + doctorModel.getExperience() + "\"" + "," + "\"" + doctorModel.getHospital_Name() + "\""
-				+ "," + "\"" + doctorModel.getDay_of_Availability() + "\"" + "," + "\""
-				+ doctorModel.getTime_of_Availability() + "\"" + ");";
-		jdbcTemplate.execute(sql);
-		return true;
+	public Boolean addDoctorToDatabase(RegisterDoctorModel doctorModel) {
+		if(checkAlreadyRegistered(doctorModel)) {
+			return false;
+		}else{
+			String sql = "insert into register_doctor (First_Name,Last_Name,DOB,Gender,Contact_Number,Email,Qualification,Speciality,Experience,Hospital_Name,DAY,Available_From,Available_To)values(" + "\""
+					+ doctorModel.getFirst_Name() + "\"" + "," + "\"" + doctorModel.getLast_Name() + "\"" + "," + "\""
+					+ doctorModel.getDOB() + "\"" + "," + "\"" + doctorModel.getGender() + "\"" + "," + "\""
+					+ Long.parseLong(doctorModel.getContact_Number()) + "\"" + "," + "\"" + doctorModel.getEmail() + "\""
+					+ "," + "\"" + doctorModel.getQualification() + "\"" + "," + "\"" + doctorModel.getSpeciality() + "\""
+					+ "," + "\"" + doctorModel.getExperience() + "\"" + "," + "\"" + doctorModel.getHospital_Name() + "\""
+					+ "," + "\"" + doctorModel.getDAY() + "\"" + "," + "\""
+					+ doctorModel.getAvailable_From() + "\"" + "," + "\""
+					+ doctorModel.getAvailable_To() + "\"" + ");";
+			jdbcTemplate.execute(sql);
+			return true;
+		}
+	}
+	
+	private boolean checkAlreadyRegistered(RegisterDoctorModel doctorModel) {
+		String sql = "select * from register_doctor where First_Name=\""+doctorModel.getFirst_Name()
+		+"\" and Last_Name=\""+doctorModel.getLast_Name()
+		+"\" and DOB=\""+doctorModel.getDOB()
+		+"\" and Gender=\""+doctorModel.getGender()
+		+"\" and Contact_Number=\""+doctorModel.getContact_Number()
+		+"\" and Email=\""+doctorModel.getEmail()
+		+"\" and Qualification=\""+doctorModel.getQualification()
+		+"\" and Speciality=\""+doctorModel.getSpeciality()
+		+"\" and Experience=\""+doctorModel.getExperience()
+		+"\" and DAY=\""+doctorModel.getDAY()
+		+"\" and Available_From=\""+doctorModel.getAvailable_From()
+		+"\" and Available_To=\""+doctorModel.getAvailable_To()+"\";";
+		List<RegisterDoctorModel> users = jdbcTemplate.query(sql, new BeanPropertyRowMapper(RegisterDoctorModel.class));
+		if(users.isEmpty()) {
+			return false;
+		}else {
+			return true;	
+		}
+		
 	}
 
-	public String generateId(registerDoctorModel doctorModel) {
+	public String generateId(RegisterDoctorModel doctorModel) {
 
 		String id = "something went wrong";
 
@@ -41,12 +69,12 @@ public class DoctorRegisterService {
 				+ doctorModel.getEmail() + "\"" + " and Qualification = " + "\"" + doctorModel.getQualification() + "\""
 				+ " and Speciality = " + "\"" + doctorModel.getSpeciality() + "\"" + " and Experience = " + "\""
 				+ doctorModel.getExperience() + "\"" + " and Hospital_Name = " + "\"" + doctorModel.getHospital_Name()
-				+ "\"" + " and Day_of_Availability = " + "\"" + doctorModel.getDay_of_Availability() + "\""
-				+ " and Time_of_Availability = " + "\"" + doctorModel.getTime_of_Availability() + "\"" + ";");
+				+ "\"" + " and DAY = " + "\"" + doctorModel.getDAY() + "\""
+				+ " and Available_From = " + "\"" + doctorModel.getAvailable_From()+ "\""
+				+ " and Available_To = " + "\"" + doctorModel.getAvailable_To() + "\"" + ";");
 
 		for (Map row : rows) {
 			if (true) {
-
 				id = "DOC" + calculateLength(row.get("id").toString());
 				break;
 			}
@@ -77,5 +105,12 @@ public class DoctorRegisterService {
 		}
 		return id;
 
+	}
+
+	public void createTable(String id) {
+		String sql = "create table doctor_" +id+"Appointments"
+				+ " (id int NOT NULL AUTO_INCREMENT,PATID varchar(10),Time Time,Facility varchar(40),Date date,Status varchar(20),Remarks varchar(255),Result1 varchar(100),Result2 varchar(100),PRIMARY KEY (id));";
+		jdbcTemplate.execute(sql);
+		
 	}
 }
